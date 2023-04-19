@@ -32,36 +32,36 @@ function array(arrays) {
 
 function merge(left, right) {
   let result = [];
-  let a = 0;
-  let b = 0;
+  let k = 0;
+  let l = 0;
 
-  while (a < left.length && b < right.length) {
-    if (left[a] < right[b]) {
-      result.push(left[a]);
-      a++;
+  while (k < left.length && l < right.length) {
+    if (left[k] < right[l]) {
+      result.push(left[k]);
+      k++;
     } else {
-      result.push(right[b]);
-      b++;
+      result.push(right[l]);
+      l++;
     }
   }
 
-  return result.concat(left.slice(a)).concat(right.slice(b));
+  return result.concat(left.slice(k)).concat(right.slice(l));
 }
 
 
 function binarySearch(arrs, target) {
-  let c = 0;
-  let d = arrs.length - 1;
+  let m = 0;
+  let n = arrs.length - 1;
 
-  while (c <= d) {
-    let middle = Math.floor((c +d) / 2);
+  while (m <= n) {
+    let middle = Math.floor((m +n) / 2);
 
     if (arrs[middle] === target) {
       return middle;
     } else if (arrs[middle] < target) {
-      c = middle + 1;
+      m = middle + 1;
     } else {
-      d = middle - 1;
+      n = middle - 1;
     }
   }
 
