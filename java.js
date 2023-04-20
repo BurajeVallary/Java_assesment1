@@ -3,6 +3,8 @@
 // 1 Write a function that takes in a string and returns it when reversed
 //let food = “eating”
 
+
+
 let food="eating";
 let foods=food.split('').reverse().join('');
 console.log(foods);
@@ -32,36 +34,36 @@ function array(arrays) {
 
 function merge(left, right) {
   let result = [];
-  let k = 0;
-  let l = 0;
+  let a = 0;
+  let b = 0;
 
-  while (k < left.length && l < right.length) {
-    if (left[k] < right[l]) {
-      result.push(left[k]);
-      k++;
+  while (a < left.length && b < right.length) {
+    if (left[a] < right[b]) {
+      result.push(left[a]);
+      a++;
     } else {
-      result.push(right[l]);
-      l++;
+      result.push(right[b]);
+      b++;
     }
   }
 
-  return result.concat(left.slice(k)).concat(right.slice(l));
+  return result.concat(left.slice(a)).concat(right.slice(b));
 }
 
 
 function binarySearch(arrs, target) {
-  let m = 0;
-  let n = arrs.length - 1;
+  let c = 0;
+  let d = arrs.length - 1;
 
-  while (m <= n) {
-    let middle = Math.floor((m +n) / 2);
+  while (c <= d) {
+    let middle = Math.floor((c +d) / 2);
 
     if (arrs[middle] === target) {
-      return middle;
+      return target;
     } else if (arrs[middle] < target) {
-      m = middle + 1;
+      c = middle + 1;
     } else {
-      n = middle - 1;
+      d = middle - 1;
     }
   }
 
@@ -73,6 +75,7 @@ const sortedNum = array(num);
 
 
 const results = binarySearch(sortedNum, target);
+
 
 console.log(results);
 
@@ -91,7 +94,7 @@ const nums=num.map(
         return value * 4
     }
 )
-console.log(num);
+console.log(nums);
  
 
 
